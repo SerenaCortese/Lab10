@@ -1,16 +1,21 @@
 package it.polito.tdp.porto.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Author {
 
 	private int id;
 	private String lastname;
 	private String firstname;
+	private List<Paper> papers;
 		
 	public Author(int id, String lastname, String firstname) {
 		super();
 		this.id = id;
 		this.lastname = lastname;
 		this.firstname = firstname;
+		papers = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -31,8 +36,8 @@ public class Author {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-
-
+	
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -41,10 +46,19 @@ public class Author {
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
+	
+	public List<Paper> getPapers() {
+		return papers;
+	}
+
+	public void setPapers(List<Paper> paper) {
+		this.papers = paper;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", lastname=" + lastname + ", firstname=" + firstname + "]";
+		return lastname +" "+ firstname;
 	}
 
 	@Override
